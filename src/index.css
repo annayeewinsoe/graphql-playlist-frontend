@@ -1,13 +1,115 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
+
+:root {
+  --reddest: #7c0a02;
+  --redder: #9b111e;
+  --red: #bd2a2a;
+  --pale-red: #cb0034;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  box-sizing: border-box;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+  margin: 0;
+  color: #fff;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+#main {
+  grid-column: 2/4;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+#playlist {
+  grid-column: 1/2;
+  background-color: var(--pale-red);
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  overflow-y: scroll;
+  padding-bottom: 10px;
+}
+
+#playlist li,
+#add-song input,
+#add-song select {
+  padding: 10px;
+  width: 90%;
+  margin: 7px auto;
+  border: none;
+}
+
+#playlist li:nth-child(odd) {
+  background-color: var(--reddest);
+  cursor: pointer;
+}
+
+#playlist li:nth-child(even) {
+  background-color: var(--redder);
+  cursor: pointer;
+}
+
+#add-song {
+  background-color: var(--redder);
+  grid-column: 1/2;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 50px 0;
+}
+
+input:focus,
+select:focus {
+  outline: 5px solid var(--reddest);
+  border: none;
+}
+
+input[type='submit']:hover {
+  outline: none;
+  background-color: var(--reddest);
+  color: #fff;
+}
+
+#details {
+  background-color: var(--reddest);
+  grid-column: 2/3;
+  width: 100%;
+  height: 100vh;
+  padding: 50px 20px;
+  overflow-y: scroll;
+}
+
+#details span {
+  padding: 0 7px;
+}
+
+#details h4 {
+  text-decoration: underline;
+}
+
+#details ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+#details li {
+  padding: 10px;
 }
