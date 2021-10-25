@@ -17,6 +17,12 @@ body {
   color: #fff;
 }
 
+#screen-err {
+  color: #222;
+  text-align: center;
+  display: none;
+}
+
 ul {
   padding: 0;
   list-style: none;
@@ -112,4 +118,14 @@ input[type='submit']:hover {
 
 #details li {
   padding: 10px;
+}
+
+@media screen and (max-width: 800px) {
+  #screen-err {
+    display: block;
+  }
+
+  .container {
+    display: none;
+  }
 }

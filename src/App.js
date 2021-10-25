@@ -14,6 +14,7 @@ const client = new ApolloClient({
 export default function App() {
   return(
     <ApolloProvider client={client}>
+      <h1 id="screen-err">Please use desktop or laptop screen size to view</h1>
       <div className="container">
         <AddSong />
         <Playlist />
